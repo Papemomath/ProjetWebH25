@@ -1,0 +1,31 @@
+.sport-container-root {
+    width: fit-content;
+}
+
+.sport-container {
+    background-color: rgb(59, 58, 58);
+    border-radius: 20px;
+    box-shadow: 0 2px 8px 0 rgb(130, 130, 130);
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: min-content auto min-content;
+    grid-template-rows: min-content auto auto;
+    align-items: center;
+    align-content: center;
+}
+
+.sport-container h2 {
+    margin: 0;
+    color: white;
+}
+
+.sport-container p {
+    margin: 0;
+    color: white;
+}
+
+.sport-container img {
+    width: 100px;
+}
