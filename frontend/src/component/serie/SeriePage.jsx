@@ -1,12 +1,12 @@
 import React from 'react';
 import "./SeriePage.css";
-import MovieCard2 from '../movieCard/MovieCard2';
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import UseSeriePage from './UseSeriePage';
 import useUtils from '../utils/useUtils';
 import { troubleShoot } from '../utils/useUtils';
 import useMoviePage from '../movie/useMoviePage';
+import MovieCard from '../movieCard/MovieCard';
                     
 export default function SeriePage() {
     const {serieFindByFiltre,page, maxPage, serieRate, genresTv, imageFiltre,  setPage, setMovieRate,  handleCheckCheckbox, handlefiltre, handleResetfiltre} = UseSeriePage();
@@ -21,12 +21,14 @@ export default function SeriePage() {
     return (
         <div className='serie-container'>
 
-            <div className='wrapper-main'>
+            {/* <div className='wrapper-main'>
                 <div className="wrapper">
                     <div className="bg"> Series </div>
                     <div className="fg"> Series </div>
                 </div>
-            </div>
+            </div> */}
+
+            <h1 className='title'>Tv</h1>
 
             <div className="content-filter" style={{color: localStorage.getItem("Title-Colors")}}>
                 <div className="filters">
@@ -61,27 +63,14 @@ export default function SeriePage() {
                     serieFindByFiltre.length > 0 ?
                     serieFindByFiltre.map((serie) => (
                             <div key={serie.id} onClick={() => handleDetail("tv", serie.id, serie.title)}>
-                                <MovieCard2
-                                    url={`https://image.tmdb.org/t/p/original/${serie.poster_path}`} 
-                                    title={serie.original_name} 
-                                    type="TV"
-                                    rate={serie.vote_average.toFixed(1)}
-                                    year={serie.first_air_date.split('-')[0]}
-                                    language={serie.original_language}
-                                /> 
+                                <MovieCard url={`https://image.tmdb.org/t/p/original/${serie.poster_path}`} title={serie.original_name}/>
                             </div>
                         )) 
                         :
                         serieRate.map((serie) => (
                             <div key={serie.id} onClick={() => handleDetail("tv", serie.id, serie.title)}>
-                                <MovieCard2 
-                                    url={`https://image.tmdb.org/t/p/original/${serie.poster_path}`} 
-                                    title={serie.original_name} 
-                                    type="TV"
-                                    rate={serie.vote_average.toFixed(1)}
-                                    year={serie.first_air_date.split('-')[0]}
-                                    language={serie.original_language}
-                                /> 
+                                <MovieCard url={`https://image.tmdb.org/t/p/original/${serie.poster_path}`} title={serie.original_name}/>
+        
                             </div>
                         ))
                 }

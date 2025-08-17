@@ -139,18 +139,16 @@
 }
 
 .container-detail .container-nav-media {
-    position: relative;
-    z-index: 1;
     display: flex;
-    justify-content: space-between; 
+    gap: 20px;
 }
 
 .container-detail .nav-media {
     display: flex;
     color: white;
-    gap: 60px;
-    margin-right: 970px;
+    gap: 30px;
     align-items: center;
+    
 }
 
 .container-detail .container-nav-media a {
@@ -235,14 +233,14 @@
 }
 .container-detail .add .addToInfoList {
     border: 1px solid white;
-    width: 70%;
+    width: 100%;
     margin: auto;
     color: whitesmoke;
     transition: transform 0.3s ease-in-out, width 3s ease-in;
     &:hover {
-        border-color: rgb(33, 114, 227);
+        border-color: rgb(9, 156, 235);
+        background-color: rgb(8, 109, 164);
         transform: scale(1.010);
-        width: 100%;
     }
     &:active {
         border-color: rgb(33, 114, 227);

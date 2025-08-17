@@ -23,7 +23,7 @@ export default function SignUp() {
                 if (submitRules(user.username, user.email, user.password) && user.username != null && user.email != null) {
                     user.username.trim();
                     user.email.trim();
-                    user.password.trim();
+                    user.password.trim();   
                     try {
                         const response = await axios.post("http://localhost:8080/connection/signup", user);
                         if (response.data) {

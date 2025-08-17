@@ -94,7 +94,7 @@ function DetailMovie() {
                         <p><strong>Budget : </strong>{dataInfo.budget} $</p>
 
                         <div className="add">
-                            <button className='addToInfoList' onClick={() => addFavorit()}>Add to InfoList</button>
+                            <button className='addToInfoList' onClick={() => addFavorit()}>Add to favorit</button>
                             <p id='addOrFailContent' style={{textAlign:"center",color:"red"}}></p>
                         </div>
                     </div>
@@ -121,8 +121,10 @@ function DetailMovie() {
                         <p><strong>Type :</strong> {dataInfo.type}</p>
                         <p><strong>Actor : </strong>{DataOmdb.Actors}</p>
 
-                        <button className='addToInfoList' onClick={addFavorit}>Add to InfoList</button>
-                        <p id='addOrFailContent' style={{textAlign:"center",color:"red"}}></p>
+                      <div className="add">
+                            <button className='addToInfoList' onClick={() => addFavorit()}>Add to favorit</button>
+                            <p id='addOrFailContent' style={{textAlign:"center",color:"red"}}></p>
+                        </div>
                     </div>
                 </div>
                 }

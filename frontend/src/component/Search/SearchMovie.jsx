@@ -15,7 +15,7 @@ function SearchMovie() {
                     <option id='genreMovie' value="movie">Film</option>
                     <option id='genreTv' value="tv">serie</option>
                 </select>
-                <input type="text" className="searchTerm" value={inputCritere} placeholder="Search by title, genre, year" onChange={(e) => setInputCritere(e.target.value)} required />
+                <input type="text" className="searchTerm" value={inputCritere} placeholder="Search by title" onChange={(e) => setInputCritere(e.target.value)} required />
                 
                 <button onClick={handlecritere} type="submit" className="searchButton">
                     <i className="fa fa-search"></i>

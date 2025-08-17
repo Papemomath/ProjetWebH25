@@ -1,11 +1,12 @@
 import React from 'react';
 import "./MoviePage.css";
-import MovieCard2 from '../movieCard/MovieCard2';
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import useMoviePage from './useMoviePage';
 import useUtils from '../utils/useUtils';
 import { troubleShoot } from '../utils/useUtils';
+import MovieCard from '../movieCard/MovieCard';
+import { CiFilter } from "react-icons/ci";
 
 function MoviePage() {
     const { moviesTrending, movieFindByFiltre, page, maxPage, genresMovie, imageFiltre, setPage, setMovieRate, handleDisplayGenre, handleCheckCheckbox, handlefiltre, handleResetfiltre } = useMoviePage();
@@ -17,12 +18,14 @@ function MoviePage() {
 
     return (
         <div className='movie-container'>
-            <div className='wrapper-main'>
+            {/* <div className='wrapper-main'>
                 <div className="wrapper">
                     <div className="bg"> Movie </div>
                     <div className="fg"> Movie </div>
                 </div>
-            </div>
+            </div> */}
+
+            <h1 className='title'>Movies</h1>
 
             <div className="content-filter" style={{ color: localStorage.getItem("Title-Colors") }}>
                 <div className="filters">
@@ -31,8 +34,7 @@ function MoviePage() {
                     <a id='topRated-flt' onClick={() => setMovieRate('top_rated')}>Top-Rated</a>
                 </div>
 
-                <a id='genre' onClick={handleDisplayGenre}> Genre <span style={{ paddingLeft: "4px" }}>{imageFiltre}</span></a>
-
+                <a id='genre' onClick={handleDisplayGenre}><span style={{ paddingRight: "4px" }}><CiFilter style={{fontSize:"20px"}}/></span>Filtrer</a>
             </div>
 
             <div className="filter-genre" id='filter-genre' style={{ display: "none" }}>
@@ -57,29 +59,15 @@ function MoviePage() {
                     movieFindByFiltre.length > 0 ?
                         movieFindByFiltre.map((movie) => (
                             <div key={movie.id} onClick={() => handleDetail("movie", movie.id, movie.title)}>
-
-                                <MovieCard2
-                                    url={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                                    title={movie.title}
-                                    type="Movie"
-                                    rate={movie.vote_average.toFixed(1)}
-                                    year={movie.release_date.split('-')[0]}
-                                    language={movie.original_language}
-                                />
+                                <MovieCard url={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} title={movie.title} />
+                                
                             </div>
                         ))
                         :
                         moviesTrending.map((movie) => (
                             <div key={movie.id} onClick={() => handleDetail("movie", movie.id, movie.title)}>
+                                <MovieCard url={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} title={movie.title} />
 
-                                <MovieCard2
-                                    url={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                                    title={movie.title}
-                                    type="Movie"
-                                    rate={movie.vote_average.toFixed(1)}
-                                    year={movie.release_date.split('-')[0]}
-                                    language={movie.original_language}
-                                />
                             </div>
                         ))
                 }

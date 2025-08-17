@@ -38,15 +38,17 @@ public class LoginService {
     }
 
 
-     public LoginResponse SignInUser(Client client) {
-         Client thisClient = rep.getClientByUsername(client.getUsername());
-         if (thisClient == null && client.isActive() && !client.getOnlineStatus()) {
-             client.setOnlineStatus(true);
-             rep.save(client);
-             return new LoginResponse(client.getId(), client.getUsername(), client.getOnlineStatus());
-         }
-         return null;
-     }
+    public LoginResponse SignInUser(Client client) {
+        Client thisClient = rep.getClientByUsername(client.getUsername());
+        if (thisClient == null && client.isActive() && !client.getOnlineStatus()) {
+            client.setOnlineStatus(true);
+            rep.save(client);
+            return new LoginResponse(client.getId(), client.getUsername(), client.getOnlineStatus());
+        }
+        return null;
+    }
+
+
 
     public boolean isClientExist(String username) {
         Client client = rep.getClientByUsername(username);

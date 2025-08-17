@@ -17,14 +17,13 @@
   font-weight: bold;
 }
 
-
 :root {
   --gold: #1a1a1a;
   --light-shadow: white;
   --dark-shadow: rgba(255, 255, 255, 0.705); 
 }
 .container-home-page .wrapper {
-  border-left: 5px solid rgb(214, 10, 10);
+  border-left: 5px solid rgb(9, 156, 235);
   padding-left: 15px;
   background: radial-gradient(#272727, #1b1b1b);
   display: grid;
