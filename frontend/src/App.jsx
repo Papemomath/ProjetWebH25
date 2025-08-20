@@ -31,7 +31,8 @@ function App() {
           <Route path='/detail/:type/:id/:title' element={<DetailMovie/>}/>  
           <Route path='/movie' element={<MoviePage />}/>  
           <Route path='/serie' element={<SeriePage />}/>  
-          <Route path='/favorit' element={sessionEtat ? <FavoritPage /> : <LogIn/>}/>  
+          {/* <Route path='/favorit' element={sessionEtat ? <FavoritPage /> : <LogIn/>}/>   */}
+          <Route path='/favorit' element={<FavoritPage/>} />  
           <Route path='/profil' element={<Profil />}/>
           <Route path='/logIn' element={sessionEtat ? <Profil /> : <LogIn/>}/>
           <Route path='/signUp' element={sessionEtat ? <Profil /> : <SignUp/>}/>

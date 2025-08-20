@@ -20,21 +20,13 @@ export default function SeriePage() {
 
     return (
         <div className='serie-container'>
-
-            {/* <div className='wrapper-main'>
-                <div className="wrapper">
-                    <div className="bg"> Series </div>
-                    <div className="fg"> Series </div>
-                </div>
-            </div> */}
-
             <h1 className='title'>Tv</h1>
 
             <div className="content-filter" style={{color: localStorage.getItem("Title-Colors")}}>
                 <div className="filters">
-                    <a onClick={() => setMovieRate('now_playing')}>now_playing</a>
-                    <a onClick={() => setMovieRate('trending')}>trending</a> 
-                    <a onClick={() => setMovieRate('top_rated')}>top_rated</a> 
+                    <a onClick={() => setMovieRate('now_playing')}>Now-playing</a>
+                    <a onClick={() => setMovieRate('trending')}>Trending</a> 
+                    <a onClick={() => setMovieRate('top_rated')}>Top-rated</a> 
 
                 </div>
                 

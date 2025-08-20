@@ -26,7 +26,6 @@ function MoviePage() {
             </div> */}
 
             <h1 className='title'>Movies</h1>
-
             <div className="content-filter" style={{ color: localStorage.getItem("Title-Colors") }}>
                 <div className="filters">
                     <a id='latest-flt' onClick={() => setMovieRate('now_playing')}>Latest </a>

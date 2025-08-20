@@ -42,7 +42,9 @@ export default function Carousel3({ actorCarousel = [null]}) {
                             <SwiperSlide key={actor.id}>
                                 <div className='card-actor'>
                                     <div className='actor-image' style={{ backgroundImage: `url(${actorImg(actor)})` }}></div>
+                                    {/* <img src={`https://image.tmdb.org/t/p/original/${actor.profile_path}`}/>             */}
             
+                                    {/* case pour div handleActorDetail */}
                                     <strong>{actor.name}</strong>
                                     <p>{actor.character}</p>
                                 </div>

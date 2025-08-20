@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   gap: 10px;
   height: 300px; 
-  cursor: pointer;
 }
 
 .content__shows div {

@@ -33,8 +33,8 @@ export default function FavoritPage() {
     console.log(favorit)
     return (
         <div className="favorit-container">
-            <h1 style={{fontWeight:"900", color:"white",fontSize:"60px"}}>Favorit</h1>
-            
+            <h1 className="title">Favorit</h1>
+            <hr style={{color:"white"}} />
             <div className="favorit-content">
             {
                 favorit && 
@@ -47,7 +47,7 @@ export default function FavoritPage() {
                     </div>
                 ))
             } 
-        </div>
+            </div>
         </div>
     )
 }

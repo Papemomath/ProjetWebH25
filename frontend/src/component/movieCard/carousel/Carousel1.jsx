@@ -17,7 +17,7 @@ export default function Carousel1({ movieCarousel = [null], type = null }) {
         pagination={{
           clickable: 'fraction',
         }}
-        slidesPerView={8}
+        slidesPerView={6}
         spaceBetween={20}
         navigation={true}
         modules={[Navigation]}

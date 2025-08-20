@@ -39,6 +39,7 @@ export default function NavBar() {
                     <Link to="/movie" title='Movie' name='movie-page'><li><MdMovieCreation style={{fontSize:"20px",marginRight:"10px"}}/>Movie</li></Link>
                     <Link to="/serie" title='Serie' name='serie-page'><li><FaTv style={{fontSize:"20px",marginRight:"10px"}}/>TV</li></Link>
                     <li title='favorit' name='favorit-page' onClick={handleFavoritRedirection}><CiBookmark style={{fontSize:"20px"}}/>Favorit</li>
+                    {/* <Link to="/favorit" title='Favorit' name='favorit-page'><li title='favorit' name='favorit-page'><CiBookmark style={{fontSize:"20px"}}/>Favorit</li></Link> */}
                     <Link to="/fifa" title='FIFA' name='sports-page'><li><PiSoccerBallFill style={{fontSize:"20px", marginRight:"10px"}}/>Sport</li></Link>
                     <li title="profil" name='profil-page' onClick={handleProfilRedirection}><CgProfile style={{fontSize:"20px", marginRight:"10px"}}/>Profil</li>
                     <Link to="/setting" title='Setting' name='settings-page'><li><IoMdSettings style={{fontSize:"20px", marginRight:"10px"}}/>Param</li></Link>
