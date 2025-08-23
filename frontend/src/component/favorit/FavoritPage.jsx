@@ -34,18 +34,27 @@ export default function FavoritPage() {
     return (
         <div className="favorit-container">
             <h1 className="title">Favorit</h1>
+            <h3 style={{color:"white"}}>{favorit.length} Element</h3>
             <hr style={{color:"white"}} />
-            <div className="favorit-content">
+            <div className="favorit-content" style={{color:"white", textAlign:"center"}}>
             {
-                favorit && 
+                favorit.length ? 
                 favorit.map((movie) => (
                     <div key={movie.id}>
-                        <div onClick={() => handleDetail(movie.type, movie.movieApiId   , movie.titre) }>
+                        <div className="movie-block" onClick={() => handleDetail(movie.type, movie.movieApiId   , movie.titre) }>
                             <MovieCard url={`https://image.tmdb.org/t/p/original/${movie.imageUrl}`} title={movie.titre} />
+                            {/*
+                            // à finir
+                            <span className="delete" onClick={() => deleteFavorit(movie.movieApiId)}>X</span> */}
+
                         </div>
                         <button onClick={() => deleteFavorit(movie.movieApiId)}>delete</button>
                     </div>
-                ))
+                )) :
+                <div>
+                    <h1>Vous n'avez aucun favorit</h1>
+                </div>
+
             } 
             </div>
         </div>

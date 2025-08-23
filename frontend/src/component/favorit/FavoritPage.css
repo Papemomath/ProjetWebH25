@@ -4,6 +4,7 @@
     padding: 10px;
 }
 
+
 .favorit-container .title {
     text-align: left;
     padding: 5px;
@@ -12,19 +13,40 @@
     font-size: 30px;
     margin: 15px 10px;
     /* pas sur sa reste à voir */
-    border-top: 10px solid rgb(228, 228, 228);
+    /* border-top: 10px solid rgb(228, 228, 228);
     border-right: 10px solid rgb(228, 228, 228);
-    text-align: center;
+    text-align: center; */
 }
 
 .favorit-content {
     width: 100%;
     padding: 10px;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
 }
 
+/* .favorit-container .favorit-content .movie-block {
+    border: 2px solid;
+    position: relative;
+}
+
+.favorit-container .favorit-content .delete {
+    position: absolute;
+    border: 2px solid;
+    top: 0;
+    right: 15px;
+    z-index: 2;
+    font-size: 20px;
+    width: 30px;
+}
+
+.favorit-container .favorit-content .delete:hover {
+    color: black;
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: 0.3s ease-in-out;
+} */
 
 .favorit-container .favorit-content button {
     width: 45%;

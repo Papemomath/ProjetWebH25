@@ -32,6 +32,8 @@ function DetailMovie() {
                 console.log(`${favoriToAdd.titre} à été ajouté au Favori avec succès`, response.data);
                 document.getElementById('addOrFailContent').textContent = `${favoriToAdd.titre} à été ajouté au Favori avec succès`;
                 document.getElementById('addOrFailContent').style.color = 'green';
+                document.getElementById('addOrFailContent').style.margin = '10px';
+
                 setTimeout(() => {
                     document.getElementById('addOrFailContent').textContent = "";
                 }, 2000)
@@ -73,13 +75,13 @@ function DetailMovie() {
                     type === "movie" ? 
                     <div className="movie-info">
                     <div className="content-info">
-                        <h1 id='movieTitle' style={{ textShadow: "2px 2px black" }}>{DataOmdb.Title}({DataOmdb.Released.split(' ')[2]})</h1>
+                        <h1 id='movieTitle' style={{ textShadow: "2px 2px black" }}>{dataInfo.title} {DataOmdb.Released.split(' ')[2]}</h1>
                         <p className='rate'>
 
-                        <strong>Rating: ⭐{DataOmdb.Metascore}% </strong>
+                        <strong>{DataOmdb.Metascore == "N/A?" ? "Rating: ⭐" + DataOmdb.Metascore+"%":""} </strong>
 
                         <span id='OMDb'>OMDb</span>
-                        <span id='rating'>{DataOmdb.imdbRating}/10</span>
+                        <span id='rating'>{DataOmdb.imdbRating}</span>
                         <span id='r'>{DataOmdb.Runtime}</span>
 
                         </p>
@@ -102,7 +104,7 @@ function DetailMovie() {
                 :
                 <div className="movie-info">
                     <div className="content-info">
-                        <h1 id='movieTitle' style={{ textShadow: "2px 2px black" }}>{DataOmdb.Title}</h1>
+                        <h1 id='movieTitle' style={{ textShadow: "2px 2px black" }}>{dataInfo.original_name}</h1>
                         <p className='rate'>
 
                         <strong>Metascore: ⭐{Math.round(dataInfo.vote_average)/10 * 100}% </strong>
