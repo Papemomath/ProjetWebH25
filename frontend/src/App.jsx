@@ -15,12 +15,13 @@ import Fifa from './component/sport/soccer/Fifa';
 import SeriePage from './component/serie/SeriePage';
 import FavoritPage from './component/favorit/FavoritPage';
 import ResetPassword from './component/resetPassword/ResetPassword';
+import StreamingPage from './component/streaming/StreamingPage';
+import useUtils from './component/utils/useUtils';
 
 
 function App() {
 
   const sessionEtat = sessionStorage.getItem("onlineStatus") === "true";
-  
   return (
       <>
       <BrowserRouter>
@@ -40,6 +41,8 @@ function App() {
           <Route path='/setting' element={<Setting/>}/>
           <Route path='/userDelete' element={<UserDelete/>}/>
           <Route path='/fifa' element={<Fifa/>}/>
+          <Route path='/stream/:type/:id' element={<StreamingPage/>}/>
+          <Route path='/stream/:type/:id/:saison/:episode' element={<StreamingPage/>}/>
           <Route path='/*' element={<NotFoundPage/>}/>
         </Routes>
       </BrowserRouter>

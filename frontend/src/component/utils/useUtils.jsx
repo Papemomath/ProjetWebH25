@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import "./useUtils.css"
 
 export default function useUtils() {
 
@@ -7,9 +8,38 @@ export default function useUtils() {
     const handleDetail = (type, id, title) => {
         navigate(`/detail/${type}/${id}/${title}`);
     };
-    return {
-        handleDetail
+
+    const handleStream = (type, id) => {
+        if(type == "tv") navigate(`/stream/${type}/${id}/1/1`);
+        else navigate(`/stream/${type}/${id}`);
     };
+
+    const loader = () => {
+        return(
+         <div class="loader">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                    <div class="bar4"></div>
+                    <div class="bar5"></div>
+                    <div class="bar6"></div>
+                    <div class="bar7"></div>
+                    <div class="bar8"></div>
+                    <div class="bar9"></div>
+                    <div class="bar10"></div>
+                    <div class="bar11"></div>
+                    <div class="bar12"></div>
+                </div>
+        )
+    }
+
+    return {
+        handleDetail,
+        handleStream,
+        loader,
+    };
+
+
 }
 
 export function troubleShoot() {

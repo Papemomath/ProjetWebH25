@@ -45,7 +45,8 @@ export default function Carousel3({ actorCarousel = [null]}) {
                                     {/* <img src={`https://image.tmdb.org/t/p/original/${actor.profile_path}`}/>             */}
             
                                     {/* case pour div handleActorDetail */}
-                                    <strong>{actor.name}</strong>
+                                    <strong><a href={`https://www.themoviedb.org/person/${actor.id}`} target='_blank'>{actor.name}</a></strong>
+                                    
                                     <p>{actor.character}</p>
                                 </div>
                             </SwiperSlide>

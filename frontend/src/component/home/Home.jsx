@@ -3,10 +3,11 @@ import './Home.css';
 import Carousel1 from '../movieCard/carousel/Carousel1';
 import Carousel2 from '../movieCard/carousel/Carousel2';
 import useHome from './useHome';
+import ScrollView from '../utils/ScrollView';
 
 function Home() {
     const { moviesRecent, moviesTopRated, moviesTrending, moviesPopular, moviesUpcoming, seriePopular, serieTopRated, serieTrending } = useHome();
-
+    
     const sections = [
         { title: "Top Rated Movie", data: moviesTopRated, type:"movie"},
         { title: "Trending Movie", data: moviesTrending, type:"movie" },
@@ -19,6 +20,9 @@ function Home() {
 
     return (
         <div className="container-home-page">
+
+            <ScrollView/>
+
             <Carousel2 movieRecent={moviesRecent} type={"movie"} /> 
 
             <hr style={{color: localStorage.getItem("Title-Colors")}}/>

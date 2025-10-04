@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./MoviePage.css";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
@@ -7,14 +7,24 @@ import useUtils from '../utils/useUtils';
 import { troubleShoot } from '../utils/useUtils';
 import MovieCard from '../movieCard/MovieCard';
 import { CiFilter } from "react-icons/ci";
+import { FaArrowAltCircleUp } from "react-icons/fa";
+import ScrollView from '../utils/ScrollView';
+
 
 function MoviePage() {
     const { moviesTrending, movieFindByFiltre, page, maxPage, genresMovie, imageFiltre, setPage, setMovieRate, handleDisplayGenre, handleCheckCheckbox, handlefiltre, handleResetfiltre } = useMoviePage();
 
-    const { handleDetail } = useUtils();
+    const { handleDetail, loader } = useUtils();
 
-    if (!moviesTrending) return <p>Chargement des film ....</p>
+    if (!moviesTrending) return loader();
     troubleShoot();
+
+    useEffect(() => {
+        window.scrollTo({   
+        top: 0,
+        behavior: "smooth"
+        });
+  }, [page]);
 
     return (
         <div className='movie-container'>
@@ -24,6 +34,8 @@ function MoviePage() {
                     <div className="fg"> Movie </div>
                 </div>
             </div> */}
+
+            <ScrollView/>
 
             <h1 className='title'>Movies</h1>
             <div className="content-filter" style={{ color: localStorage.getItem("Title-Colors") }}>

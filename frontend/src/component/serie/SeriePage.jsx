@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./SeriePage.css";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
@@ -7,19 +7,30 @@ import useUtils from '../utils/useUtils';
 import { troubleShoot } from '../utils/useUtils';
 import useMoviePage from '../movie/useMoviePage';
 import MovieCard from '../movieCard/MovieCard';
+import ScrollView from '../utils/ScrollView';
                     
 export default function SeriePage() {
     const {serieFindByFiltre,page, maxPage, serieRate, genresTv, imageFiltre,  setPage, setMovieRate,  handleCheckCheckbox, handlefiltre, handleResetfiltre} = UseSeriePage();
     const {handleDisplayGenre} = useMoviePage();
-    const {handleDetail} = useUtils();
+    const {handleDetail, loader} = useUtils();
     
     console.log("series: ", serieFindByFiltre)
-    if (!serieRate) return <p>Chargement des film ....</p>
+    if (!serieRate) return loader();
 
     troubleShoot();
 
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }, [page])
+
     return (
         <div className='serie-container'>
+
+            <ScrollView/>
+
             <h1 className='title'>Tv</h1>
 
             <div className="content-filter" style={{color: localStorage.getItem("Title-Colors")}}>

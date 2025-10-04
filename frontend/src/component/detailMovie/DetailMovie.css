@@ -225,26 +225,80 @@
     color: whitesmoke;
 }
 
-.container-detail .add .addToInfoList  {
-    border: 2px solid red;
+.container-detail .buttonDetail {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.container-detail .add .addToInfoList {
-    border: 1px solid white;
+    flex-direction: wrap;
+    gap: 12px;
+    margin-top: 20px;
     width: 100%;
-    margin: auto;
-    color: whitesmoke;
-    transition: transform 0.3s ease-in-out, width 3s ease-in;
-    &:hover {
-        border-color: rgb(9, 156, 235);
-        background-color: rgb(8, 109, 164);
-        transform: scale(1.010);
-    }
-    &:active {
-        border-color: rgb(33, 114, 227);
-        color: rgb(48, 48, 76);
-    }
+}
+
+
+/* --- Bouton "ajouter data liste favorit" --- */
+.container-detail .buttonDetail  .btn-handle-add-info {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  width: 50%;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #112530;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+.container-detail .buttonDetail  .btn-handle-add-info:active {
+  scale: 0.92;
+}
+
+.container-detail .buttonDetail  .btn-handle-add-info:hover {
+  background: rgb(78, 2, 26);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+  width: 60%;
+  transition: width 1s ease-in-out;
+}
+
+/* --- Bouton "Regarder Maintenant" --- */
+.container-detail .buttonDetail  .btn-handle-stream {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  width: 50%;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(26, 14, 20);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+.container-detail .buttonDetail  .btn-handle-stream:active {
+  scale: 0.92;
+}
+
+.container-detail .buttonDetail  .btn-handle-stream:hover {
+  background: rgb(78, 2, 26);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(232, 31, 75, 0.873) 60%);
+  color: rgb(4, 4, 38);
+  width: 60%;
+  transition: width 1.5s ease-in-out;
+}
+
+/* --- Message d'erreur / succès --- */
+#addOrFailContent {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 5px;
 }
 

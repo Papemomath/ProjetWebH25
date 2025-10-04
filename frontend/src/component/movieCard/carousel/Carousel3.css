@@ -11,3 +11,10 @@
     height: 300px;
     width: 100%;
 }
+
+.card-actor a {
+    color: black;
+}
+.card-actor a:hover {
+    color: grey;
+}

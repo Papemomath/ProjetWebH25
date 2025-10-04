@@ -33,6 +33,10 @@ export default function NavBar() {
             <nav>
                 {/* <a href="/" style={{color: localStorage.getItem("Title-Colors")}}>Cut</a> */}
                 <h2 className='title' style={{color: localStorage.getItem("Title-Colors")}}>Cut+</h2>
+                {/* <h2 >
+                    FilmWeb 
+                    <img src="src\assets\logo_info.png" alt="" width={50} style={{borderRadius:"50px"}}/>
+                </h2> */}
 
                 <ul className="list">
                     <Link to="/" title='Home' name='home-page'><li><GrHomeRounded style={{fontSize:"20px", marginRight:"10px"}}/> Home</li></Link>
@@ -41,7 +45,15 @@ export default function NavBar() {
                     <li title='favorit' name='favorit-page' onClick={handleFavoritRedirection}><CiBookmark style={{fontSize:"20px"}}/>Favorit</li>
                     {/* <Link to="/favorit" title='Favorit' name='favorit-page'><li title='favorit' name='favorit-page'><CiBookmark style={{fontSize:"20px"}}/>Favorit</li></Link> */}
                     <Link to="/fifa" title='FIFA' name='sports-page'><li><PiSoccerBallFill style={{fontSize:"20px", marginRight:"10px"}}/>Sport</li></Link>
+                    
+                    
                     <li title="profil" name='profil-page' onClick={handleProfilRedirection}><CgProfile style={{fontSize:"20px", marginRight:"10px"}}/>Profil</li>
+                    {/* {sessionStorage.getItem("onlineStatus") == "true" && 
+                    // cacher le profil si la session est null
+                    <li title="profil" name='profil-page' onClick={handleProfilRedirection}><CgProfile style={{fontSize:"20px", marginRight:"10px"}}/>Profil</li>
+                    } */}
+
+
                     <Link to="/setting" title='Setting' name='settings-page'><li><IoMdSettings style={{fontSize:"20px", marginRight:"10px"}}/>Param</li></Link>
                     <Link to="/search" title='Search'><button className="search">search</button></Link>
                 

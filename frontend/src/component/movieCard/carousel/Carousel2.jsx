@@ -11,7 +11,7 @@ import useUtils from '../../utils/useUtils';
 
 export default function Carousel2({ movieRecent = [], type = null }) {
 
-  const {handleDetail} = useUtils();
+  const {handleDetail, handleStream} = useUtils();
 
   return (
     <div className='content-main'>
@@ -40,12 +40,17 @@ export default function Carousel2({ movieRecent = [], type = null }) {
                           
                           <figcaption>
                             <div className="movie-info" data-swiper-parallax="-500">
-                              <h2>{movie.title}</h2>
-                                <h4>{movie.release_date.split('-')[0]} ⭐{movie.vote_average.toFixed(1)}</h4>
+                              <h2 style={{cursor:"pointer"}} onClick={() => handleDetail(type, movie.id ,movie.title)}>{movie.title}</h2>
+                              <h4>{movie.release_date.split('-')[0]} ⭐{movie.vote_average.toFixed(1)}</h4>
                               <hr />
                               <h6>{movie.overview}</h6>
                               <hr />
-                              <button onClick={() => handleDetail(type, movie.id ,movie.title)}><FaInfoCircle/>Info</button>
+                              {/* <button onClick={() => handleStream(type, movie.id)}><FaInfoCircle/>Info</button> */}
+                              <button class="btn" onClick={() => handleStream(type, movie.id)}>
+                                Watch
+                              </button>
+
+
                             </div>
                             
                         </figcaption> 

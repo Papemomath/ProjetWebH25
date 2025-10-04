@@ -4,20 +4,29 @@ import Carousel1 from '../movieCard/carousel/Carousel1';
 import useDetailMovie from './useDetailMovie';
 import { blankAvatarStyler } from './useDetailMovie';
 import Carousel3 from '../movieCard/carousel/Carousel3';
-import { troubleShoot } from '../utils/useUtils';
+import useUtils, { troubleShoot } from '../utils/useUtils';
 import axios from 'axios';
+import { data } from 'react-router-dom';
+import ScrollView from '../utils/ScrollView';
+
 
 function DetailMovie() {
     const {type, DataOmdb, dataInfo, dataPosterTmdb, dataRecommendation, ongletActor, setOngletActor, ongletMedia, setOngletMedia, dataActors, dataCrew, dataImages, dataVideos } = useDetailMovie();
 
+    const {handleStream, loader} = useUtils();
+    
     if (!DataOmdb) return <p>Film information is loading...</p>;
     if (!dataRecommendation) return <p>Movie recommendations are loading...</p>;
     if (!dataActors) return <p>Actors information is loading...</p>;
+
+    if (!DataOmdb || !dataRecommendation || !dataActors || !dataInfo) {
+        return loader();
+    }
     troubleShoot();
     blankAvatarStyler();
-    
 
-
+    console.log(dataInfo)
+    // fonction a placer dans le useDetail
     function addFavorit() {
         if (sessionStorage.getItem("onlineStatus") == "true") {
             let favoriToAdd = {
@@ -65,72 +74,94 @@ function DetailMovie() {
     return (
         <div className="container-detail" >
 
-            <div className="movie-detail" >
+            <ScrollView/>
 
-                <div className="movie-image" >
-                    <img src={`https://image.tmdb.org/t/p/original${dataPosterTmdb.poster_path}`} alt={dataPosterTmdb.title || "Affiche du film"} />
+            <div className="movie-detail">
+                {/* --- Image principale --- */}
+                <div className="movie-image">
+                    <img
+                    src={`https://image.tmdb.org/t/p/original${dataPosterTmdb.poster_path}`}
+                    alt={dataPosterTmdb.title || dataPosterTmdb.original_name || "Affiche du film"}
+                    />
                 </div>
 
-                {
-                    type === "movie" ? 
-                    <div className="movie-info">
+                {/* --- Informations du film ou de la série --- */}
+                <div className="movie-info">
                     <div className="content-info">
-                        <h1 id='movieTitle' style={{ textShadow: "2px 2px black" }}>{dataInfo.title} {DataOmdb.Released.split(' ')[2]}</h1>
-                        <p className='rate'>
+                    {/* Titre */}
+                    <h1 id="movieTitle" style={{ textShadow: "2px 2px black" }}>
+                        {type === "movie"
+                        ? `${dataInfo.title} ${DataOmdb.Released?.split(" ")[2] || ""}`
+                        : dataInfo.original_name}
+                    </h1>
 
-                        <strong>{DataOmdb.Metascore == "N/A?" ? "Rating: ⭐" + DataOmdb.Metascore+"%":""} </strong>
+                    {/* --- Note et infos rapides --- */}
+                    <p className="rate">
+                        {type === "movie" ? (
+                        <>
+                            <strong>
+                            {DataOmdb.Metascore !== "N/A"
+                                ? `Rating: ⭐${DataOmdb.Metascore}%`
+                                : ""}
+                            </strong>
+                            <span id="OMDb">OMDb</span>
+                            <span id="rating">{DataOmdb.imdbRating}</span>
+                            <span id="r">{DataOmdb.Runtime}</span>
+                        </>
+                        ) : (
+                        <>
+                            <strong>
+                                Metascore: ⭐{Math.round((dataInfo.vote_average / 10) * 100)}%
+                            </strong>
+                            <span id="OMDb">OMDb</span>
+                            <span id="rating">{DataOmdb.imdbRating}/10</span>
+                            <span id="r">{DataOmdb.Year}</span>
+                            <span id="r">{DataOmdb.Runtime}</span>
+                        </>
+                        )}
+                    </p>
 
-                        <span id='OMDb'>OMDb</span>
-                        <span id='rating'>{DataOmdb.imdbRating}</span>
-                        <span id='r'>{DataOmdb.Runtime}</span>
+                    {/* --- Description --- */}
+                    <p>{dataInfo.overview}</p>
+                    <hr />
 
-                        </p>
-                        <p>{dataInfo.overview}</p>
-                        <hr />
+                    {/* --- Détails selon le type --- */}
+                    {type === "movie" ? (
+                        <>
                         <p><strong>Release :</strong> {DataOmdb.Released}</p>
                         <p><strong>Director :</strong> {DataOmdb.Director}</p>
                         <p><strong>Genre :</strong> {DataOmdb.Genre}</p>
-                        
                         <p><strong>Type :</strong> {type}</p>
-                        <p><strong>Actor : </strong>{DataOmdb.Actors}</p>
-                        <p><strong>Budget : </strong>{dataInfo.budget} $</p>
-
-                        <div className="add">
-                            <button className='addToInfoList' onClick={() => addFavorit()}>Add to favorit</button>
-                            <p id='addOrFailContent' style={{textAlign:"center",color:"red"}}></p>
-                        </div>
-                    </div>
-                </div>
-                :
-                <div className="movie-info">
-                    <div className="content-info">
-                        <h1 id='movieTitle' style={{ textShadow: "2px 2px black" }}>{dataInfo.original_name}</h1>
-                        <p className='rate'>
-
-                        <strong>Metascore: ⭐{Math.round(dataInfo.vote_average)/10 * 100}% </strong>
-
-                        <span id='OMDb'>OMDb</span>
-                        <span id='rating'>{DataOmdb.imdbRating}/10</span>
-                        <span id='r'>{DataOmdb.Year}</span>
-                        <span id='r'>{DataOmdb.Runtime}</span>
-
-                        </p>
-                        <p>{dataInfo.overview}</p>
-                        <hr />
+                        <p><strong>Actor :</strong> {DataOmdb.Actors}</p>
+                        <p><strong>Budget :</strong> {dataInfo.budget?.toLocaleString()} $</p>
+                        </>
+                    ) : (
+                        <>
                         <p><strong>Release :</strong> {DataOmdb.Released}</p>
-                        <p><strong>Nombre de saison :</strong> {dataInfo.number_of_seasons}</p>
+                        <p><strong>Nombre de saisons :</strong> {dataInfo.number_of_seasons}</p>
                         <p><strong>Genre :</strong> {DataOmdb.Genre}</p>
                         <p><strong>Type :</strong> {dataInfo.type}</p>
-                        <p><strong>Actor : </strong>{DataOmdb.Actors}</p>
+                        <p><strong>Actor :</strong> {DataOmdb.Actors}</p>
+                        </>
+                    )}
 
-                      <div className="add">
-                            <button className='addToInfoList' onClick={() => addFavorit()}>Add to favorit</button>
-                            <p id='addOrFailContent' style={{textAlign:"center",color:"red"}}></p>
-                        </div>
+                    {/* --- Bouton d’ajout aux favoris --- */}
+                    <div className="buttonDetail">
+                        <button className="btn-handle-add-info" onClick={addFavorit}>
+                            Add to favorite ✚
+                        </button>
+                        {/* <button className="watchStream" onClick={() => handleStream(type,dataInfo.id)}>
+                            Regarder Maintenant  ▷
+                        </button> */}
+                            <button class="btn-handle-stream" onClick={() => handleStream(type, dataInfo.id)}>
+                                Watch 🎧
+                            </button>
+                    </div>
+                    <p id="addOrFailContent" style={{ textAlign: "center", color: "red" }}></p>
                     </div>
                 </div>
-                }
-            </div>
+                </div>
+
             <hr />
 
             <div className="container-nav-media">
