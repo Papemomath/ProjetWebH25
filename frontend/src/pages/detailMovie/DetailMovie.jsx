@@ -191,7 +191,7 @@ function DetailMovie() {
                     ongletMedia === "Videos" &&
                     <div className='media-video'>
                         {
-                            dataVideos.slice(0, 10).map((video, key) => (
+                            dataVideos && dataVideos.slice(0, 3).map((video, key) => (
                                 <iframe key={key} width="560" height="315"
                                     src={`https://www.youtube.com/embed/${video.key}`}
                                     title="YouTube video player"
