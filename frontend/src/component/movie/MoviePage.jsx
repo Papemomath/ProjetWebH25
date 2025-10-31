@@ -12,9 +12,16 @@ import ScrollView from '../utils/ScrollView';
 
 
 function MoviePage() {
-    const { moviesTrending, movieFindByFiltre, page, maxPage, genresMovie, imageFiltre, setPage, setMovieRate, handleDisplayGenre, handleCheckCheckbox, handlefiltre, handleResetfiltre } = useMoviePage();
+    const { movieRate,moviesTrending, movieFindByFiltre, page, maxPage, genresMovie, imageFiltre, setPage, setMovieRate, handleDisplayGenre, handleCheckCheckbox, handlefiltre, handleResetfiltre } = useMoviePage();
 
     const { handleDetail, loader } = useUtils();
+
+
+    // function handleStyleRate(rate) {
+    //     if (rate == "now_playing") {
+    //         document.getElementById("now_playing").style.textDecoration = "underline";
+    //     }
+    // }
 
     if (!moviesTrending) return loader();
     troubleShoot();
@@ -24,7 +31,7 @@ function MoviePage() {
         top: 0,
         behavior: "smooth"
         });
-  }, [page]);
+    }, [page]);
 
     return (
         <div className='movie-container'>
@@ -38,9 +45,9 @@ function MoviePage() {
             <ScrollView/>
 
             <h1 className='title'>Movies</h1>
-            <div className="content-filter" style={{ color: localStorage.getItem("Title-Colors") }}>
+            <div className="content-filter" style={{ color: localStorage.getItem("Title-Colors")}}>
                 <div className="filters">
-                    <a id='latest-flt' onClick={() => setMovieRate('now_playing')}>Latest </a>
+                    <a id='latest-flt' onClick={() => setMovieRate('now_playing')}>Latest</a>
                     <a id='trending-flt' onClick={() => setMovieRate('trending')}>Trending </a>
                     <a id='topRated-flt' onClick={() => setMovieRate('top_rated')}>Top-Rated</a>
                 </div>

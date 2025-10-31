@@ -4,6 +4,7 @@ import MovieCard from "../movieCard/MovieCard";
 import axios from "axios";
 import useUtils from "../utils/useUtils";
 
+
 export default function FavoritPage() {
     const [favorit, setFavorit] = useState([])    
 
@@ -30,7 +31,6 @@ export default function FavoritPage() {
     const {handleDetail} = useUtils();
       
 
-    console.log(favorit)
     return (
         <div className="favorit-container">
             <h1 className="title">Favorit</h1>

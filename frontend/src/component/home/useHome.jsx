@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 // url movie
-const API_KEY = "bbe34269651625cd81a39afd38610700"; 
+const API_KEY = import.meta.env.VITE_APP_API_KEY_TMDB; 
 const API_URL_A_l_AFFICHE = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&page=`;
 const API_URL_TOP_RATED = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&page=`;
 const API_URL_TRENDING = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&page=`;
@@ -29,7 +29,6 @@ export default function useHome() {
                 const response = await fetch(`${url}${1}`);
                 const data = await response.json();
                 setter(data.results || []);
-                console.log(data)
             } catch {
                 console.error(`url invalide!`);
             }

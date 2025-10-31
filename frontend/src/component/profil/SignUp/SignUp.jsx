@@ -27,7 +27,6 @@ export default function SignUp() {
                     try {
                         const response = await axios.post("http://localhost:8080/connection/signup", user);
                         if (response.data) {
-                            console.log(response.data)
                             sessionStorage.setItem("id", response.data.id);
                             sessionStorage.setItem("username", response.data.usernameResponse);
                             sessionStorage.setItem("onlineStatus", response.data.onlineStatus);

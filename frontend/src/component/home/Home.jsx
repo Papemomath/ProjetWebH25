@@ -30,9 +30,10 @@ function Home() {
             {
             sections.map((section, index) => (
                 <div key={index}>
-                    <div className="wrapper">
-                        <div className="bg"> {section.title} </div>
-                        <div className="fg"> {section.title} </div>
+                    <div className="wrapper" style={{borderLeft: `5px solid ${localStorage.getItem("Title-Colors")}`}}>
+                        {/* <div className="bg"> {section.title} </div>
+                        <div className="fg"> {section.title} </div> */}
+                        <h2 className='title'>{section.title}</h2>
                     </div>
                     <div className="container-movie">
                         <div className="movies">

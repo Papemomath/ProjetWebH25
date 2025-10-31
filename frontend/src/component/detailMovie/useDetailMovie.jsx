@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
 ////// Api de OMDB pour récupération des info/////////////////////////
-const API_KEY_OMDB = "a34708ad"; 
+
+const API_KEY_OMDB = import.meta.env.VITE_APP_API_KEY_OMDB;
 const API_URL_OMDB = `https://www.omdbapi.com/?apikey=${API_KEY_OMDB}`;
 
 ///// Api recommendation TMDB pour les film recommandé //////////////////
-const API_KEY_TMDB = "bbe34269651625cd81a39afd38610700"; 
+const API_KEY_TMDB = import.meta.env.VITE_APP_API_KEY_TMDB; 
+// import.meta.env.REACT_APP_API_KEY_TMDB
 
 function useDetailMovie() {
     const {type, id, title } = useParams();

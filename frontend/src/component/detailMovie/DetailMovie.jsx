@@ -15,17 +15,13 @@ function DetailMovie() {
 
     const {handleStream, loader} = useUtils();
     
-    if (!DataOmdb) return <p>Film information is loading...</p>;
-    if (!dataRecommendation) return <p>Movie recommendations are loading...</p>;
-    if (!dataActors) return <p>Actors information is loading...</p>;
-
     if (!DataOmdb || !dataRecommendation || !dataActors || !dataInfo) {
         return loader();
     }
+    
     troubleShoot();
     blankAvatarStyler();
 
-    console.log(dataInfo)
     // fonction a placer dans le useDetail
     function addFavorit() {
         if (sessionStorage.getItem("onlineStatus") == "true") {

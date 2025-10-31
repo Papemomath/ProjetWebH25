@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const API_KEY = "bbe34269651625cd81a39afd38610700"; 
+const API_KEY = import.meta.env.VITE_APP_API_KEY_TMDB; 
 const API_URL_BY_RATE = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&page=`;
 
 const imageFiltre = <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16"> <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/></svg>
@@ -76,6 +76,8 @@ export default function useMoviePage() {
         const data = await response.json();
         setMoviesTrending(data.results || []);
         setMaxPage(data.total_pages)
+
+        
     };
     
     const searchMoviesByGenre = async (filtre) => {

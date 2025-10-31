@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useUtils from '../utils/useUtils';
 
 ////// Api de TMDB /////////////////////////z
-const API_KEY_TMDB = "bbe34269651625cd81a39afd38610700"; 
+const API_KEY_TMDB = import.meta.env.VITE_APP_API_KEY_TMDB; 
 const API_URL_TMDB_TRENDING = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY_TMDB}&page=`;
 
 

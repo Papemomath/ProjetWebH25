@@ -14,7 +14,6 @@ export default function SeriePage() {
     const {handleDisplayGenre} = useMoviePage();
     const {handleDetail, loader} = useUtils();
     
-    console.log("series: ", serieFindByFiltre)
     if (!serieRate) return loader();
 
     troubleShoot();

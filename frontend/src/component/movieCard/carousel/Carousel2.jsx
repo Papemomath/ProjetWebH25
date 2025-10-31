@@ -47,7 +47,7 @@ export default function Carousel2({ movieRecent = [], type = null }) {
                               <hr />
                               {/* <button onClick={() => handleStream(type, movie.id)}><FaInfoCircle/>Info</button> */}
                               <button class="btn" onClick={() => handleStream(type, movie.id)}>
-                                Watch
+                              ▷  Watch
                               </button>
 
 
