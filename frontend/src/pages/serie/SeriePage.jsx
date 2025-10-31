@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import "./SeriePage.css";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
-import UseSeriePage from './UseSeriePage';
-import useUtils from '../utils/useUtils';
-import { troubleShoot } from '../utils/useUtils';
-import useMoviePage from '../movie/useMoviePage';
-import MovieCard from '../movieCard/MovieCard';
-import ScrollView from '../utils/ScrollView';
+import UseSeriePage from '../../hooks/UseSeriePage';
+import useUtils from '../../utils/useUtils';
+import { troubleShoot } from '../../utils/useUtils';
+import useMoviePage from '../../hooks/useMoviePage';
+import MovieCard from '../../component/movieCard/MovieCard';
+import ScrollView from '../../utils/ScrollView';
                     
 export default function SeriePage() {
     const {serieFindByFiltre,page, maxPage, serieRate, genresTv, imageFiltre,  setPage, setMovieRate,  handleCheckCheckbox, handlefiltre, handleResetfiltre} = UseSeriePage();

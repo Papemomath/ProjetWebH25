@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { troubleShoot } from "../utils/useUtils";
+import { troubleShoot } from "../../utils/useUtils";
 import './Setting.css';
 
 export default function Setting() {

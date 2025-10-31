@@ -1,22 +1,21 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import SearchMovie from './component/Search/SearchMovie';
-import DetailMovie from './component/detailMovie/DetailMovie';
+import SearchMovie from './pages/Search/SearchMovie';
+import DetailMovie from './pages/detailMovie/DetailMovie';
 import NavBar from './component/navBar/NavBar';
 import NotFoundPage from './component/NotFoundPage';
-import MoviePage from './component/movie/MoviePage'
-import Home from './component/home/Home';
+import MoviePage from './pages/movie/MoviePage'
+import Home from './pages/home/Home';
 import Profil from './component/profil/Profil';
 import LogIn from './component/profil/logIn/LogIn';
 import SignUp from './component/profil/SignUp/SignUp';
-import Setting from './component/settings/Setting';
-import UserDelete from './component/settings/UserDelete';
+import Setting from './pages/settings/Setting';
+import UserDelete from './pages/settings/UserDelete';
 import Fifa from './component/sport/soccer/Fifa';
-import SeriePage from './component/serie/SeriePage';
-import FavoritPage from './component/favorit/FavoritPage';
+import SeriePage from './pages/serie/SeriePage';
+import FavoritPage from './pages/favorit/FavoritPage';
 import ResetPassword from './component/resetPassword/ResetPassword';
-import StreamingPage from './component/streaming/StreamingPage';
-import useUtils from './component/utils/useUtils';
+import StreamingPage from './pages/streaming/StreamingPage';
 
 
 function App() {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./FavoritPage.css"
-import MovieCard from "../movieCard/MovieCard";
+import MovieCard from "../../component/movieCard/MovieCard";
 import axios from "axios";
-import useUtils from "../utils/useUtils";
+import useUtils from "../../utils/useUtils";
 
 
 export default function FavoritPage() {

@@ -46,7 +46,6 @@
     width: 55%;
 }
 
-/* From Uiverse.io by ShrinilDhorda */ 
 .content-main .swiper figure figcaption .btn {
   font-size: 1.2rem;
   padding: 1rem 2.5rem;
@@ -74,4 +73,25 @@
   color: rgb(4, 4, 38);
   width: 220px;
   transition: width 1.5s ease-in-out;
+}
+
+/* Pour écrans ≤ 1280px */
+@media (max-width: 1280px) {
+  .content-main h6 {
+    font-size: 12px;
+  }
+}
+
+/* Pour écrans ≤ 1024px */
+@media (max-width: 1024px) {
+  .content-main h6 {
+    font-size: 11px;
+  }
+}
+
+/* Pour écrans ≤ 768px */
+@media (max-width: 768px) {
+  .content-main h6 {
+    font-size: 10px;
+  }
 }

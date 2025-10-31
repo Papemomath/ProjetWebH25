@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './Carousel2.css';   
 import { Parallax, Pagination, Navigation, Autoplay } from 'swiper/modules';
-import useUtils from '../../utils/useUtils';
+import useUtils from '../../../utils/useUtils';
 
 
 export default function Carousel2({ movieRecent = [], type = null }) {

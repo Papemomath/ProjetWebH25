@@ -1,9 +1,9 @@
 import 'react';
 import './Home.css';
-import Carousel1 from '../movieCard/carousel/Carousel1';
-import Carousel2 from '../movieCard/carousel/Carousel2';
-import useHome from './useHome';
-import ScrollView from '../utils/ScrollView';
+import Carousel1 from '../../component/carousel/carousel1/Carousel1';
+import Carousel2 from '../../component/carousel/carousel2/Carousel2';
+import useHome from '../../hooks/useHome';
+import ScrollView from '../../utils/ScrollView';
 
 function Home() {
     const { moviesRecent, moviesTopRated, moviesTrending, moviesPopular, moviesUpcoming, seriePopular, serieTopRated, serieTrending } = useHome();

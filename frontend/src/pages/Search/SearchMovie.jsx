@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './SearchMovie.css';
-import MovieCard from '../movieCard/MovieCard';
-import useSearchMovie from './useSearchMovie';
+import MovieCard from '../../component/movieCard/MovieCard';
+import useSearchMovie from '../../hooks/useSearchMovie';
 
 
 function SearchMovie() {

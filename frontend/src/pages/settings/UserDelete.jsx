@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import submitRules, { handleLogOut } from "../profil/UseConnection";
+import submitRules, { handleLogOut } from "../../component/profil/UseConnection";
 import axios from "axios";
 import "./UserDelete.css";
 

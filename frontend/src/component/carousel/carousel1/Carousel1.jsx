@@ -4,8 +4,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './Carousel1.css'
 import { Navigation } from 'swiper/modules';
-import MovieCard from '../MovieCard';
-import useUtils from '../../utils/useUtils';
+import MovieCard from '../../movieCard/MovieCard';
+import useUtils from '../../../utils/useUtils';
 
 export default function Carousel1({ movieCarousel = [null], type = null }) {
 

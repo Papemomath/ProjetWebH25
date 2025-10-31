@@ -1,13 +1,13 @@
 import React from 'react';
 import './DetailMovie.css';
-import Carousel1 from '../movieCard/carousel/Carousel1';
-import useDetailMovie from './useDetailMovie';
-import { blankAvatarStyler } from './useDetailMovie';
-import Carousel3 from '../movieCard/carousel/Carousel3';
-import useUtils, { troubleShoot } from '../utils/useUtils';
+import Carousel1 from '../../component/carousel/carousel1/Carousel1';
+import useDetailMovie from '../../hooks/useDetailMovie';
+import { blankAvatarStyler } from '../../hooks/useDetailMovie';
+import Carousel3 from '../../component/carousel/carousel3/Carousel3';
+import useUtils, { troubleShoot } from '../../utils/useUtils';
 import axios from 'axios';
 import { data } from 'react-router-dom';
-import ScrollView from '../utils/ScrollView';
+import ScrollView from '../../utils/ScrollView';
 
 
 function DetailMovie() {

@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import "./MoviePage.css";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
-import useMoviePage from './useMoviePage';
-import useUtils from '../utils/useUtils';
-import { troubleShoot } from '../utils/useUtils';
-import MovieCard from '../movieCard/MovieCard';
+import useMoviePage from '../../hooks/useMoviePage';
+import useUtils from '../../utils/useUtils';
+import { troubleShoot } from '../../utils/useUtils';
+import MovieCard from '../../component/movieCard/MovieCard';
 import { CiFilter } from "react-icons/ci";
 import { FaArrowAltCircleUp } from "react-icons/fa";
-import ScrollView from '../utils/ScrollView';
+import ScrollView from '../../utils/ScrollView';
 
 
 function MoviePage() {
