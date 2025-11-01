@@ -194,7 +194,6 @@
     z-index: 1;
     display: flex;
     border-radius: 10px;
-    box-shadow: 4px 4px whitesmoke;
 }
 
 .container-detail .media iframe {
@@ -209,6 +208,12 @@
     display: none;
 }
 
+.container-detail .media .not-found {
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
 
 .container-detail .recommandations {
     border: 2px solid; 

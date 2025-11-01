@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { data, Link, useNavigate } from 'react-router-dom';
-import submitRules from '../UseConnection';
+import submitRules from '../../../component/profil/UseConnection';
 import './LogIn.css';
 import axios from 'axios';
 

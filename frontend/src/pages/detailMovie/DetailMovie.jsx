@@ -191,7 +191,8 @@ function DetailMovie() {
                     ongletMedia === "Videos" &&
                     <div className='media-video'>
                         {
-                            dataVideos && dataVideos.slice(0, 3).map((video, key) => (
+                            dataVideos.length > 0 ? 
+                            dataVideos.slice(0, 3).map((video, key) => (
                                 <iframe key={key} width="560" height="315"
                                     src={`https://www.youtube.com/embed/${video.key}`}
                                     title="YouTube video player"
@@ -199,6 +200,10 @@ function DetailMovie() {
                                 >
                                 </iframe>
                             ))
+                            :
+                            <div className='not-found'>
+                                <h1>Aucune video</h1>
+                            </div>
                         }
                     </div>
                 }

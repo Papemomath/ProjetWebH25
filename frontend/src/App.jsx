@@ -7,7 +7,7 @@ import NotFoundPage from './component/NotFoundPage';
 import MoviePage from './pages/movie/MoviePage'
 import Home from './pages/home/Home';
 import Profil from './component/profil/Profil';
-import LogIn from './component/profil/logIn/LogIn';
+import LogIn from './pages/auth/logIn/LogIn';
 import SignUp from './component/profil/SignUp/SignUp';
 import Setting from './pages/settings/Setting';
 import UserDelete from './pages/settings/UserDelete';
@@ -16,6 +16,7 @@ import SeriePage from './pages/serie/SeriePage';
 import FavoritPage from './pages/favorit/FavoritPage';
 import ResetPassword from './component/resetPassword/ResetPassword';
 import StreamingPage from './pages/streaming/StreamingPage';
+import Test from './pages/test';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path='/fifa' element={<Fifa/>}/>
           <Route path='/stream/:type/:id' element={<StreamingPage/>}/>
           <Route path='/stream/:type/:id/:saison/:episode' element={<StreamingPage/>}/>
+          <Route path='/test' element={<Test/>}/>
           <Route path='/*' element={<NotFoundPage/>}/>
         </Routes>
       </BrowserRouter>
