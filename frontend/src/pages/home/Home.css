@@ -1,0 +1,97 @@
+.container-home-page {
+  margin-top: 50px;
+  padding: 10px;
+  width: 100%;
+}
+
+.container-home-page .container-movie {
+  width: 100%;
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+}
+
+.container-home-page .rate {
+  /* border-left: 5px solid rgba(255, 0, 0, 0.815); */
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+:root {
+  --gold: #1a1a1a;
+  --light-shadow: white;
+  --dark-shadow: rgba(255, 255, 255, 0.705); 
+}
+
+.container-home-page .wrapper {
+  display: flex;
+  padding-left: 10px;
+}
+
+
+.wrapper .title {
+  color: white;
+}
+
+/* .container-home-page .wrapper .title {
+} */
+/* .container-home-page .wrapper {
+  border-left: 5px solid rgb(9, 156, 235);
+  padding-left: 15px;
+  background: radial-gradient(#272727, #1b1b1b);
+  display: grid;
+  grid-template-areas: 'overlap';
+  place-content: center;
+  text-transform: uppercase;
+  float: left;
+}
+
+.container-home-page .wrapper > div {
+  background-clip: text;  
+  -webkit-background-clip: text;
+  color: #363833;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  grid-area: overlap;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 4px transparent;
+}
+
+.container-home-page div.bg {
+  background-image: repeating-linear-gradient( 105deg, 
+    var(--gold) 0% , 
+    var(--dark-shadow) 5%,
+    var(--gold) 12%);
+  color: transparent;
+  filter: drop-shadow(5px 15px 15px black);
+  transform: scaleY(1.05);
+  transform-origin: top;
+}
+.container-home-page div.fg{
+  background-image: repeating-linear-gradient( 5deg,  
+    var(--gold) 0% , 
+    var(--light-shadow) 23%, 
+    var(--gold) 31%);
+  color: #1e2127;
+  transform: scale(1);
+} */
+
+.container-home-page .container-movie button:hover {
+  border: 1px solid white;
+  transform: scale(1.02);
+}
+
+.container-home-page .container-movie button:active {
+  border: 1px solid black;
+}
+
+.container-home-page .movies {
+  width: 100%;
+  padding: 10px;
+  display: flex;  
+  overflow: auto;
+  gap: 15px;
+  align-items: center;
+  border-radius: 20px;
+}
